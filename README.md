@@ -33,3 +33,7 @@ And I should see a message "7 Results"
 And I should see a list of the 7 members of the house for Colorado
 And I should see a name, role, party, and district for each member
 ```
+
+### Checks for Understanding
+What is Delcaritive Programming?
+* Delcaritive programming is wiritn
