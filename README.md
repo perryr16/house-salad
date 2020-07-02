@@ -39,16 +39,16 @@ What is Delcaritive Programming?
 * Delcaritive programming is the process of writing code that you want, and worrying about implementation later. It is essentially TDD. Start at the end point and work backwards
 
 What is Red, Green, Refactor?
-* Red, Green, Refactor is a process of writing complex code. Start by using declaritive programming to write a test. Initially that test will fail (RED). Write the code in the easiest way in order to get that test to pass, dont worry about best practices...yet (GREEN). After the tests are passing then refactor to follow the 4 pilliars of OOP, SRP, and MCV.
+* Red, Green, Refactor is a process for writing complex code. Start by using declaritive programming to write a test. Initially that test will fail (RED). Write the code in the easiest way in order to get that test to pass, dont worry about best practices...yet (GREEN). After the tests are passing then refactor to follow the 4 pilliars of OOP, SRP, and MCV.
 
 Controller: 
-* Single Repsonsibility: A traffic cop that passes handles requests and only passes essential data to the view
+* Single Repsonsibility: A traffic cop that handles requests and only passes essential data to the view
 * Does it achieve abstraction?: Yes, the controller passes the `@members` object to the view but it does not detail how `@members` is created
-* Does it acheive encapsulation?: Yes, the controller itself is a capsule and the method `index` is another capsule holding information that follows the SPR
+* Does it acheive encapsulation?: Yes, the controller itself is a capsule and the method `index` is another capsule within holding information that follows the SPR
 
 SearchResults: 
 * Single Responsibility: Given a State ('Colorado'), the serach_results will access the API service to generate member ruby objects. 
-* Abstraction?: Yes, by calling `SearchResults.new.members` we are given an array of member objects without having to know how they are individually generated
+* Abstraction?: Yes, by calling `SearchResults.new.members(state)` we are given an array of member objects without having to know how they are individually generated
 * Encapsulation?: Yes, the `SearchResults` class is a stand alone class that has the single responsibilty of generating member objects. It is sepearte from the `member` model and the API service
 
 Member model:
@@ -57,6 +57,6 @@ Member model:
 * Encapsulation?: Yes, all the data related to a member is held within a single object. It feels like the data has been put in a single capsule
 
 Probublica Service:
-* Single Responsiblity: It's sole resposibility is to access the API and return data in a more usable format. Within the service there are two methods that each have a single responsibility. `conn` is used to access the general portion of the API, while `members_of_house(state)`'s responsibility is to use the general `conn` and then get a more specific result. We could add a third method similar to `members_of_house(state)` called `members_of_senate(state)`
+* Single Responsiblity: It's sole resposibility is to access the API and return data in a more human usable format. Within the service there are two methods that each have a single responsibility. `conn` is used to access the general portion of the API, while `members_of_house(state)`'s responsibility is to use the general `conn` and then get a more specific result. We could add a third method similar to `members_of_house(state)` called `members_of_senate(state)`
 * Abstraction?: Yes, at no point do we see the binary that is coming in, instead we get a nice usable ruby hash at the end.
 * Encapsulation?: Yes, this class is only concerend with converting the API data. It is not concered with creating `member` objects, or sending data to the view. The service is put in this capsule that the rest of the project doesn't need to access
