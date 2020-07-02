@@ -36,7 +36,7 @@ And I should see a name, role, party, and district for each member
 
 ### Checks for Understanding
 What is Delcaritive Programming?
-* Delcaritive programming is the process of writing code that you want, and worrying about implementation later. It is essentially TDD. Start at the end point and work backwards
+* Delcaritive programming is the process of writing code that you want, and worrying about implementation later. It is essentially TDD without tests. Start at the end point and work backwards
 
 What is Red, Green, Refactor?
 * Red, Green, Refactor is a process for writing complex code. Start by using declaritive programming to write a test. Initially that test will fail (RED). Write the code in the easiest way in order to get that test to pass, dont worry about best practices...yet (GREEN). After the tests are passing then refactor to follow the 4 pilliars of OOP, SRP, and MCV.
